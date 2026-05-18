@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0072)file:///C:/Users/tsuchingchen/Downloads/%E8%81%96%E5%AE%B6%E5%A0%82.html -->
 <html lang="zh-Hant"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +69,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
 .section-sub{font-size:.95rem;color:var(--ink-light);font-family:var(--sans);margin-bottom:2rem;line-height:1.6}
 .divider{border:none;border-top:1px solid var(--rule);margin:0}
 
+/* ── RWD CONTAINERS ── */
+.section-container{max-width:1100px;margin:0 auto;padding:0 4rem 5rem}
+.canon-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;margin-bottom:2.5rem}
+.canon-arrow{display:flex;align-items:center;justify-content:center;padding:0 1rem;font-size:1.1rem;color:var(--ink-light);background:transparent}
+.story-card-padding{padding:2rem 2.2rem}
+.inner-card{background:var(--paper);border:1px solid var(--rule);padding:2rem 2.5rem;display:flex;flex-direction:column;gap:1rem}
+
 /* ── LEAD ARTICLE (稿1) ── */
 .lead-article{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--paper-warm);overflow:hidden;border:1px solid var(--rule)}
 .lead-img{position:relative;overflow:hidden;min-height:420px}
@@ -84,7 +90,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
 .read-more{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--brick);text-decoration:none;letter-spacing:.05em;border-bottom:1px solid var(--brick);padding-bottom:2px;transition:gap .2s}
 .read-more:hover{gap:.8rem}
 .read-more::after{content:'→'}
-.article-meta{font-family:var(--sans);font-size:12px;color:var(--ink-light);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.article-meta{font-family:var(--sans);font-size:12px;color:var(--ink-light);margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule)}
 
 /* ── STORY GRID (稿3、4) ── */
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -98,8 +104,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
 
 /* ── CANONIZATION STEPS (稿3) ── */
 .canon-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin:2.5rem 0;border:1px solid var(--rule)}
-.canon-step{background:var(--paper);padding:1.5rem 1.25rem;position:relative}
-.canon-step.current{background:var(--brick);color:white}
+.canon-step{background:var(--paper);padding:1.5rem 1.25rem;position:relative;border:1px solid var(--rule)}
+.canon-step.current{background:var(--brick);color:white;border-color:var(--brick)}
 .canon-num{font-family:var(--serif);font-size:2.2rem;color:var(--rule);margin-bottom:.5rem;line-height:1}
 .canon-step.current .canon-num{color:rgba(255,255,255,.3)}
 .canon-step-title{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:.4rem}
@@ -204,16 +210,25 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   .tips-section{padding:3.5rem 1.5rem}
   .tips-grid{grid-template-columns:1fr}
   .site-footer{padding:2.5rem 1.5rem}
+
+  /* 優化新增的手機端覆蓋樣式 */
+  .section-container{padding:0 1.5rem 3.5rem}
+  .lead-body{padding:1.5rem}
+  .canon-flow{grid-template-columns:1fr;gap:1.5rem}
+  .canon-arrow{display:none}
+  .story-card-padding{padding:1.5rem}
+  .inner-card{padding:1.5rem}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
-  <a class="logo" href="#">TVBS新聞網</a>
+  <a class="logo" href="#" style="display:inline-flex;align-items:center;gap:8px;">
+    <img src="TVBS logo-white.png" alt="TVBS" style="height:20px;width:auto;">TVBS新聞網
+  </a>
   <nav>
-    <a href="#story1">教宗祝聖</a>
+    <a href="#story1">教宗祝盛</a>
     <a href="#story2">建築解析</a>
     <a href="#story3">封聖之路</a>
     <a href="#story4">完工爭議</a>
@@ -224,7 +239,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   <span class="special-tag">數位專題</span>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <img class="hero-img" src="hero.jpg" alt="聖家堂夜景">
   <div class="hero-overlay"></div>
@@ -232,12 +246,10 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
     <div class="hero-label">TVBS數位專題・2026年6月</div>
     <h1>聖家堂百年登頂<br></h1>
     <p class="hero-quote">1882年，一個書商的夢想在巴塞隆納的農田上破土。144年後，教宗良十四世將親臨見證那座直指天際的耶穌基督塔祝聖揭幕。從未竟的遺志到世界最高教堂，這是一場跨越三個世紀、由信仰與爭議共同鑄造的建築奇蹟。</p>
-    
   </div>
   <div class="hero-scroll">向下</div>
 </section>
 
-<!-- TIMELINE -->
 <div class="timeline-section">
   <div class="timeline-label">聖家堂・144年大事紀</div>
   <div class="timeline">
@@ -279,14 +291,12 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   </div>
 </div>
 
-<!-- 稿1：教宗親臨 -->
 <hr class="divider">
-  <div id="story1">
 <div class="section" style="padding-bottom:2rem" id="story1">
   <div class="section-rule"></div>
   <div class="section-label">重點報導・一</div>
 </div>
-<div style="max-width:1100px;margin:0 auto;padding:0 4rem 5rem">
+<div class="section-container">
   <div class="lead-article">
     <div class="lead-img">
       <img src="story1.jpg" alt="聖家堂耶穌基督塔">
@@ -304,43 +314,40 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
         </p>
         <a class="read-more" href="https://news.tvbs.com.tw/life/3202048" target="_blank">閱讀完整報導</a>
       </div>
-      
     </div>
   </div>
 </div>
 
-<!-- 稿3：封聖之路 -->
 <hr class="divider">
-<div id="story2" style="background:var(--paper-warm);padding:5rem 4rem">
+<div id="story2" class="section" style="background:var(--paper-warm)">
   <div style="max-width:1100px;margin:0 auto">
     <div class="section-rule"></div>
     <div class="section-label">重點報導・二</div>
     <h2 class="section-title">「上帝建築師」高第逝世百年！<br>恰逢聖家堂主塔落成，封聖路受矚目</h2>
-    <p class="section-sub">2025年4月，教宗方濟各宣告高第為「可敬者」，封聖進程正式啟動。百年祭日與聖家堂主塔揭幕同一天，封聖期待再度升溫。</p>
+    <p class="section-sub">2025年4月，教宗方濟加速宣告高第為「可敬者」，封聖進程正式啟動。百年祭日與聖家堂主塔揭幕同一天，封聖期待再度升溫。</p>
 
-    <!-- 封聖四階段圖解 -->
     <div style="margin:2.5rem 0 0">
       <div style="font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink-mid);letter-spacing:.06em;margin-bottom:1rem">天主教封聖四階段：高第現在走到哪裡？</div>
-      <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;border:1px solid var(--rule);background:var(--rule);gap:1px;margin-bottom:2.5rem">
+      <div class="canon-flow">
         <div class="canon-step">
           <div class="canon-num">01</div>
           <div class="canon-step-title">上帝的僕人</div>
           <div class="canon-step-desc">啟動調查，收集生前德行、著作及奇蹟事證</div>
         </div>
-        <div style="background:var(--paper);display:flex;align-items:center;justify-content:center;padding:0 .5rem;font-size:1.1rem;color:var(--ink-light)">→</div>
+        <div class="canon-arrow">→</div>
         <div class="canon-step current">
           <div class="canon-badge">高第目前所在</div>
           <div class="canon-num">02</div>
           <div class="canon-step-title">可敬者</div>
           <div class="canon-step-desc">教廷確認具備「英勇聖德」，2025年正式宣告</div>
         </div>
-        <div style="background:var(--paper-warm);display:flex;align-items:center;justify-content:center;padding:0 .5rem;font-size:1.1rem;color:var(--ink-light)">→</div>
+        <div class="canon-arrow">→</div>
         <div class="canon-step">
           <div class="canon-num">03</div>
           <div class="canon-step-title">真福（宣福）</div>
           <div class="canon-step-desc">確認一項經代禱的奇蹟，教宗舉行宣福禮</div>
         </div>
-        <div style="background:var(--paper);display:flex;align-items:center;justify-content:center;padding:0 .5rem;font-size:1.1rem;color:var(--ink-light)">→</div>
+        <div class="canon-arrow">→</div>
         <div class="canon-step">
           <div class="canon-num">04</div>
           <div class="canon-step-title">聖人</div>
@@ -352,26 +359,24 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
     <div class="story-grid" style="margin-top:1.5rem">
       <div style="background:var(--paper);border:1px solid var(--rule);overflow:hidden">
         <img src="story2.jpg" alt="高第封聖之路" style="width:100%;height:220px;object-fit:cover;display:block">
-        <div style="padding:2rem 2.2rem">
+        <div class="story-card-padding">
         <p style="font-size:.95rem;color:var(--ink-mid);line-height:1.9;margin-bottom:1.5rem">
           「以建築侍奉上帝」是高第生平的座右銘。生命中最後14年，他幾乎完全奉獻給聖家堂，被世人稱為「上帝的建築師」。6月10日既是主塔祝聖日，也是高第逝世整整100週年，讓各界對宣福進程充滿期待⋯⋯
         </p>
         <a class="read-more" href="https://news.tvbs.com.tw/world/3201254" target="_blank">閱讀完整報導</a>
         </div>
       </div>
-      <div style="background:var(--ink);padding:2rem 2.2rem;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="story-card-padding" style="background:var(--ink);display:flex;flex-direction:column;justify-content:space-between">
         <div>
           <div style="font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick);margin-bottom:1rem">倫敦聖瑪莉大學・宗教學者</div>
           <p style="font-family:var(--serif);font-size:1.15rem;font-style:italic;color:white;line-height:1.7;margin-bottom:1rem">「高第要被尊為聖人，必須要有兩個神蹟歸功於他，並得到梵蒂岡的嚴格認證⋯⋯即便早已被世人視為聖人，要經過真正的封聖，需要非常高的門檻。」</p>
           <div style="font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.45)">布利萬特（Stephen Bullivant）</div>
         </div>
-        
       </div>
     </div>
   </div>
 </div>
 
-<!-- 稿2：建築解析（預寫） -->
 <div class="height-section" id="story3">
   <div class="height-inner">
     <div class="section-rule" style="background:var(--brick)"></div>
@@ -379,8 +384,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
     <h2 class="section-title" style="color:white;font-size:clamp(1.8rem,3.5vw,2.8rem)">172.5公尺登頂！<br>全球最高教堂背後藏高第謙卑密碼</h2>
     <p class="section-sub" style="color:rgba(255,255,255,.55)">聖家堂18座塔中的最高塔，高度恰低於巴塞隆納蒙特惠奇山。這是高第刻意的謙卑設計：人造建築，不應超越上帝的創造。</p>
 
-    <!-- 高度比較圖 -->
-<div class="height-compare">
+    <div class="height-compare">
       <div class="height-bar-wrap">
         <div class="height-bar main" style="height:200px;position:relative;overflow:hidden;padding:0">
           <div class="height-label">全球最高教堂</div>
@@ -417,17 +421,16 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
         <div class="height-highlight">18<span style="font-size:1.8rem">座</span></div>
         <div class="height-highlight-label">18座塔的象徵意義</div>
         <p style="margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.9">聖家堂共有18座塔，高度各有神學對應：最矮的12座代表耶穌的十二門徒，環繞四周守護；稍高的4座代表馬太、馬可、路加、約翰四位福音書作者，象徵將福音傳遍四方；再高一層的是聖母瑪利亞之塔，高度介於門徒與基督之間，呼應她在天主教神學中「人與神之間轉介者」的角色；而居於正中央、高達172.5公尺的主塔，則代表耶穌基督本身，俯瞰整座城市。</p>
-<p style="margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.9">值得注意的是，高第刻意將主塔高度設定在巴塞隆納制高點蒙特惠奇山（約173公尺）以下，體現他一貫的謙卑哲學：人類的創造，不應凌駕於上帝的自然之上。這個設計決定讓聖家堂成為巴塞隆納天際線上最顯眼的存在，卻又以一種近乎隱密的方式向自然低頭。</p>
-<p style="margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.9">每一座塔的高度都不是結構需求的產物，而是神學位階在空間中的具體表達。高第相信建築是「上帝的語言」，他用幾何、光線與高度，把一套完整的天主教宇宙觀砌進石材之中。站在教堂前仰望，你看見的不只是144年的工程奇蹟，而是一個建築師用一生試圖向上帝說的那句話⋯⋯</p>
+        <p style="margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.9">值得注意的是，高第刻意將主塔高度設定在巴塞隆納制高點蒙特惠奇山（約173公尺）以下，體現他一貫的謙卑哲學：人類的創造，不應凌駕於上帝的自然之上。這個設計決定讓聖家堂成為巴塞隆納天際線上最顯眼的存在，卻又以一種近乎隱密的方式向自然低頭。</p>
+        <p style="margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.9">每一座塔的高度都不是結構需求的產物，而是神學位階在空間中的具體表達。高第相信建築是「上帝的語言」，他用幾何、光線與高度，把一套完整的天主教宇宙觀砌進石材之中。站在教堂前仰望，你看見的不只是144年的工程奇蹟，而是一個建築師用一生試圖向上帝說的那句話⋯⋯</p>
         <a class="btn btn-outline-white" href="https://news.tvbs.com.tw/world/3201254" target="_blank" style="margin-top:1.5rem;display:inline-block">閱讀完整報導</a>
       </div>
       <div>
         <div style="position:relative;margin-bottom:1rem">
-  <img src="story3.jpg" alt="聖家堂建築細節" style="width:100%;aspect-ratio:3/4;max-height:600px;object-fit:cover;display:block">
-  <div class="lead-img-caption">聖家堂耶穌基督塔高達172.5公尺，成為全球最高教堂，刻意低於巴塞隆納蒙特惠奇山，體現高第謙卑設計哲學。（示意圖／Shutterstock達志影像）</div>
-</div>
+          <img src="story3.jpg" alt="聖家堂建築細節" style="width:100%;aspect-ratio:3/4;max-height:600px;object-fit:cover;display:block">
+          <div class="lead-img-caption">聖家堂耶穌基督塔高達172.5公尺，成為全球最高教堂，刻意低於巴塞隆納蒙特惠奇山，體現高第謙卑設計哲學。（示意圖／Shutterstock達志影像）</div>
+        </div>
         <div style="margin-top:1.5rem;padding:1.2rem 1.5rem;border:1px solid rgba(255,255,255,.15)">
-          
           <div style="font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.35)">※ 本文為預寫稿，正式完稿將替換此處內容</div>
         </div>
       </div>
@@ -435,7 +438,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   </div>
 </div>
 
-<!-- 稿4：登頂但未完工 -->
 <hr class="divider">
 <div id="story4">
   <div class="controversy-wrap">
@@ -454,7 +456,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
         居民們掛出紅色抗議標語「我們的房子是合法的！」，與後方壯麗的尖塔形成諷刺對比。部分評論家也質疑，階梯計畫並非出自高第原始設計，而是教會為容納每年近500萬遊客的商業擴張⋯⋯
       </p>
       <a class="read-more" href="https://news.tvbs.com.tw/world/3205045" target="_blank">閱讀完整報導</a>
-      
     </div>
     <div>
       <img class="controversy-img" src="story4.jpg" alt="聖家堂周邊街景">
@@ -463,7 +464,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   </div>
 </div>
 
-<!-- 稿5：觀光經濟（預寫） -->
 <hr class="divider">
 <div class="economy-section" id="story5">
   <div class="economy-inner">
@@ -472,9 +472,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
     <h2 class="section-title">一張門票蓋一座教堂？<br>聖家堂靠觀光收入撐起144年工程</h2>
     <p class="section-sub">起初靠信徒捐獻建造的贖罪教堂，如今已是巴塞隆納最具代表性的觀光地標，每年門票與周邊收入支撐工程持續推進。</p>
     <div style="position:relative;margin:2rem 0 0">
-  <img src="story5.jpg" alt="聖家堂觀光人潮" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--rule)">
-  <div class="lead-img-caption">聖家堂每年吸引約480萬名訪客，門票收入是支撐144年工程持續推進的唯一財源。（圖／Shutterstock達志影像）</div>
-</div>
+      <img src="story5.jpg" alt="聖家堂觀光人潮" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--rule)">
+      <div class="lead-img-caption">聖家堂每年吸引約480萬名訪客，門票收入是支撐144年工程持續推進的唯一財源。（圖／Shutterstock達志影像）</div>
+    </div>
     <div class="stat-cards">
       <div class="stat-card">
         <div class="stat-num">480<span class="stat-unit">萬</span></div>
@@ -490,7 +490,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
       </div>
     </div>
 
-    <div style="background:var(--paper);border:1px solid var(--rule);padding:2rem 2.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div class="inner-card">
       <p style="font-size:.95rem;color:var(--ink-mid);line-height:1.9">
         聖家堂在2026年主塔落成後，預計將迎來新一波觀光熱潮。然而，宗教空間的商業化、世界遺產維護成本，以及過度觀光對城市居民生活的衝擊，也是巴塞隆納市政府正面對的難題⋯⋯
       </p>
@@ -502,7 +502,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   </div>
 </div>
 
-<!-- 稿6：高第年（預寫） -->
 <hr class="divider">
 <div class="gaudi-section" id="story6">
   <div class="section-rule"></div>
@@ -555,7 +554,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
   <div style="margin-top:1rem;font-family:var(--sans);font-size:12px;color:var(--ink-light)">※ 本文為預寫稿，正式完稿將替換</div>
 </div>
 
-<!-- 稿7：參觀攻略 -->
 <hr class="divider">
 <div class="tips-section" id="tips">
   <div class="tips-inner">
@@ -564,9 +562,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
     <h2 class="section-title" style="color:var(--ink)">教宗要來了！2026聖家堂參觀攻略<br>這3件事新手切記別踩雷</h2>
     <p style="font-family:var(--sans);font-size:.95rem;color:var(--ink-mid);margin-bottom:0;line-height:1.7">6月大典前後人潮爆滿，安檢加強。由巴塞隆納官方中文導遊王儷瑾解說，整理票務、時間、穿著三大必知事項。</p>
     <div style="position:relative;margin:2rem 0 0">
-  <img src="story7.jpg" alt="聖家堂參觀現場" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--rule)">
-  <div class="lead-img-caption">聖家堂每15分鐘一梯次入場，安檢嚴格，教宗訪問前後人潮預計創歷史新高。（圖／Shutterstock達志影像）</div>
-</div>
+      <img src="story7.jpg" alt="聖家堂參觀現場" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--rule)">
+      <div class="lead-img-caption">聖家堂每15分鐘一梯次入場，安檢嚴格，教宗訪問前後人潮預計創歷史新高。（圖／Shutterstock達志影像）</div>
+    </div>
     
     <div class="tips-grid">
       <div class="tip-card">
@@ -623,24 +621,20 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
       <p>更多細節：導覽語音、官方App使用、聖保羅醫院與米拉之家周邊行程建議</p>
       <a class="btn btn-brick" href="https://news.tvbs.com.tw/life/3202048" target="_blank">閱讀完整攻略報導</a>
     </div>
-
-    
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-logo">TVBS新聞網</div>
+  <div class="footer-logo" style="display:inline-flex;align-items:center;gap:8px;justify-content:center;">
+    <img src="TVBS logo-white.png" alt="TVBS" style="height:24px;width:auto;">TVBS新聞網
+  </div>
   <div style="font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.4);margin-bottom:.5rem;letter-spacing:.08em">數位專題・聖家堂百年登頂</div>
   <hr class="footer-divider">
-  <div class="footer-meta">編譯／沈惟中・張君堯・張森皓・謝景沛・林國安・劉哲琪・陳詩璧<br>專題監製／黃貞怡
-<br>
-數位設計・網頁製作／陳祖晴<br>
+  <div class="footer-meta">編譯／沈惟中・張君堯・張森皓・謝景沛・林國安・劉哲琪・陳詩璧<br>專題監製／黃貞怡<br>
+    數位設計・網頁製作／陳祖晴<br>
     版權圖片，請勿轉載<br><br>
     © 2026 TVBS新聞網　版權所有
   </div>
 </footer>
-
-
 
 </body></html>
